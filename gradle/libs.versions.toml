@@ -20,6 +20,7 @@ hiltNavigation = "1.2.0"
 javaxInject = "1"
 javaxAnnotation = "1.0"
 immutableCollection = "0.3.8"
+mockk = "1.13.13"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -52,6 +53,8 @@ hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.re
 javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInject" }
 javax-annotation = { module = "javax.annotation:jsr250-api", version.ref = "javaxAnnotation" }
 immutable-collection = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "immutableCollection" }
+mockk = {module = "io.mockk:mockk", version.ref = "mockk"}
+coroutines-test = {module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlin-coroutines"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

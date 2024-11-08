@@ -1,5 +1,6 @@
 package com.tushar.presentation.ui.screens.listing
 
+import androidx.annotation.VisibleForTesting
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -69,6 +70,7 @@ class ListingViewModel @Inject constructor(
         populateFilterData()
     }
 
+    @VisibleForTesting
     private fun listenToScreenState() {
         viewModelScope.launch(ioDispatcher) {
             val isDataPresentOnLocal = checkDataAvailability()
