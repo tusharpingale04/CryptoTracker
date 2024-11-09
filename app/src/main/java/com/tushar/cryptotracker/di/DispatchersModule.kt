@@ -1,8 +1,5 @@
 package com.tushar.cryptotracker.di
 
-import com.tushar.presentation.di.DefaultDispatcher
-import com.tushar.presentation.di.IoDispatcher
-import com.tushar.presentation.di.MainDispatcher
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
