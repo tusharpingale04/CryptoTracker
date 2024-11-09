@@ -49,6 +49,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -141,7 +142,7 @@ fun CryptoScreen(
     onChipClick: (position: Int, isSelected: Boolean) -> Unit
 ) {
     Column(
-        modifier = modifier
+        modifier = modifier.testTag("cryptoScreen")
     ) {
         CryptoCurrencies(currencies = state.currencies)
         Filters(state = state, onChipClick = onChipClick)
@@ -153,7 +154,7 @@ fun ErrorScreen(
     modifier: Modifier = Modifier,
     retry: () -> Unit
 ) {
-    Box(modifier = modifier, contentAlignment = Alignment.Center) {
+    Box(modifier = modifier.testTag("errorScreen"), contentAlignment = Alignment.Center) {
         Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 text = "Something went wrong! Please try again",
@@ -173,7 +174,7 @@ fun ErrorScreen(
 fun LoadingScreen(
     modifier: Modifier = Modifier
 ) {
-    Box(modifier = modifier, contentAlignment = Alignment.Center) {
+    Box(modifier = modifier.testTag("loadingScreen"), contentAlignment = Alignment.Center) {
         CircularProgressIndicator()
     }
 }
@@ -220,7 +221,7 @@ private fun ColumnScope.CryptoCurrencies(
     currencies: ImmutableList<Crypto>
 ) {
     LazyColumn(
-        modifier = Modifier.Companion.weight(1f)
+        modifier = Modifier.weight(1f).testTag("currenciesList")
     ) {
         items(currencies.size) { index ->
             val crypto = currencies.getOrNull(index)
@@ -283,10 +284,12 @@ fun SearchAppBar(
         }
     }
     TopAppBar(
+        modifier = Modifier.testTag("searchBar"),
         title = {
             if (searchWidgetState == SearchWidgetState.OPENED) {
                 TextField(
                     modifier = Modifier
+                        .testTag("searchTextField")
                         .focusRequester(focusRequester)
                         .fillMaxWidth(),
                     value = searchTextState,
