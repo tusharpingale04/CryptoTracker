@@ -11,7 +11,7 @@ Below is the app architecture used in Crypto Tracker:
 
 ---
 
-## 🏛️ UI
+## UI
 
 ![Screenshot_20241110-160759-min](https://github.com/user-attachments/assets/78975f06-677b-4810-859d-a77a386034fe)
 
